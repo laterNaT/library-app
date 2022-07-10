@@ -27,18 +27,26 @@ main {
 table {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px; /* REMOVE THIS LATER  */
+  margin-top: 50px; /* REMOVE THIS LATER  */
   border-collapse: collapse;
   letter-spacing: 1px;
 }
 
 th, td {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 10px 20px;
+}
+
+tr {
+  border-bottom: 1px solid black;
 }
 
 td {
   text-align: center;
+}
+
+td:last-child {
+  border: none;
 }
 
 caption {
@@ -58,6 +66,10 @@ form {
   top: 50vh;
   left: 50vw;
   /* width: 400px; */
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #add-book-form {
@@ -107,20 +119,21 @@ form {
   margin-top: 10px;
 }
 
-.input-wrapper:last-child button:last-of-type {
-  /* delete button   */
-  background-color: rgb(221 60 60);
-}
-
-
 .blurry-background {
   background: rgb(0 0 0 / 54%)
 }
 
 .btn {
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid black;
   font-weight: 500;
+}
+
+.delete-btn {
+  background-color: rgb(221 60 60);
+  color: white;
+  border: none;
+  padding: 5px 40px;
 }
 

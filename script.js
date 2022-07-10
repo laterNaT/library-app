@@ -5,44 +5,65 @@ function Book(title, author, pageNr, isRead) {
   this.author = author;
   this.pageNr = pageNr;
   this.isRead = isRead;
-
-  // this.info = function() {
-  //   return `${this.title} by ${this.author}, ${pageNr} pages, ${isRead ? 'is already read' : 'not read yet'}`;
-  // }
 }
 
 function addBookToLibrary(title, author, pageNr, isRead) {
   let newBook = new Book(title, author, pageNr, isRead);
   myLibrary.push(newBook);
+}
 
-  // Add book to table
-  let lastTr = document.querySelector('table tbody tr:last-child');
-  if (!lastTr) {
-    // if no tr added, select body instead
-    lastTr = document.querySelector('table tbody');
-  }
-
-  const tr = document.createElement('tr');
-  lastTr.after(tr);
-  for (const key in newBook) {
-    if (Object.prototype.hasOwnProperty.call(newBook, key)) {
-      const td = document.createElement('td');
-      td.innerText = newBook[key];
-      tr.appendChild(td);
-    }
+function displayBooks() {
+  document.getElementById('tbody').replaceChildren();
+  for (let i = 0; i < myLibrary.length; i++) {
+    addBookToDom(myLibrary[i], i);
   }
 }
 
+function addBookToDom(book, index) {
+  const tr = document.createElement('tr');
+  tr.dataset.index = index;
+  let lastTr = document.querySelector('table tbody tr:last-child');
+  if (!lastTr) {
+    // if no table row added, select body instead
+    lastTr = document.querySelector('table tbody');
+    lastTr.appendChild(tr);
+  } else {
+    lastTr.after(tr);
+  }
+
+  for (const key in book) {
+    if (Object.prototype.hasOwnProperty.call(book, key)) {
+      const td = document.createElement('td');
+      td.innerText = book[key];
+      tr.appendChild(td);
+    }
+  }
+  const td = document.createElement('td');
+  const deleteBtn = document.createElement('button');
+  deleteBtn.addEventListener('click', () => {
+    myLibrary.splice(index, 1);
+    displayBooks();
+  });
+  deleteBtn.classList.add('btn', 'delete-btn');
+  deleteBtn.innerText = 'Delete'
+  td.appendChild(deleteBtn);
+  tr.appendChild(td);
+}
+
 const addBookBtn = document.getElementById('add-book-btn');
-const body = document.getElementById('body');
-const formWrapper = document.querySelector('.form-wrapper');
 const cancelBtn = document.querySelector('.input-wrapper:last-child button:last-of-type');
 [addBookBtn, cancelBtn].forEach(e => e.addEventListener('click', () => {
+  // todo: reset form on cancel;
+  const formWrapper = document.querySelector('.form-wrapper');
+  const body = document.getElementById('body');
+  const table = document.getElementById('table');
   addBookBtn.classList.toggle('blurry-background');
   if (body.classList.contains('blurry-background')) {
+    table.style.visibility = 'visible';
     body.classList.remove('blurry-background');
     formWrapper.style.visibility = 'hidden';
   } else {
+    table.style.visibility = 'hidden';
     body.classList.add('blurry-background');
     formWrapper.style.visibility = 'visible';
   }
@@ -56,5 +77,6 @@ addBookForm.addEventListener('submit', (e) => {
   const bookPages = document.getElementById('bookPages').value;
   const bookIsRead = document.getElementById('bookIsRead').checked;
   addBookToLibrary(title, author, bookPages, bookIsRead);
+  displayBooks();
   addBookForm.reset();
 });

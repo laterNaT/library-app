@@ -34,16 +34,16 @@
         </div>
         <div class="input-wrapper">
           <label for="bookIsRead">Read?</label>
-          <input type="checkbox" name="bookIsRead" id="bookIsRead">
+          <input type="checkbox" name="bookIsRead" id="bookIsRead" checked>
         </div>
         <div class="input-wrapper">
           <button type="submit" class="btn">Add to my library</button>
-          <button type="button" class="btn">Cancel</button>
+          <button type="button" class="btn delete-btn">Cancel</button>
         </div>
       </div>
     </form>
     
-    <table>
+    <table id="table">
       <caption>List of books added</caption>
       <thead>
         <tr>
@@ -53,8 +53,7 @@
           <th>Read status</th>
         </tr>
       </thead>
-      <tbody>
-        
+      <tbody id="tbody">
         
       </tbody>
     </table>
