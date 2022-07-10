@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+html, body {
+  height: 100%;
+}
+
+
+:root {
+  --padding: 16px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: var(--padding);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+main {
+  height: 100vh;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px; /* REMOVE THIS LATER  */
+  border-collapse: collapse;
+  letter-spacing: 1px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+td {
+  text-align: center;
+}
+
+caption {
+  padding: var(--padding);
+}
+
+input:not(input[type='checkbox']) {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px;
+  min-width: 200px;
+}
+
+form {
+  position: fixed;
+  z-index: 1;
+  top: 50vh;
+  left: 50vw;
+  /* width: 400px; */
+}
+
+#add-book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-book-form label {
+  /* Align input fields */
+  display: inline-block;
+  width: 100px;
+}
+
+.center-wrap {
+  text-align: center;
+}
+
+.center-wrap #add-book-btn {
+  margin-top: 20px;
+}
+
+.form-wrapper {
+  /* Center popup to middle of screen */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: calc(var(--padding) * 4) calc(var(--padding) * 2);
+  background-color: #ccc;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  visibility: hidden;
+}
+
+.input-wrapper {
+  margin-bottom: 10px;
+}
+
+.input-wrapper:last-child {
+  /* buttons */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.input-wrapper:last-child button:last-of-type {
+  /* delete button   */
+  background-color: rgb(221 60 60);
+}
+
+
+.blurry-background {
+  background: rgb(0 0 0 / 54%)
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-weight: 500;
+}
+
