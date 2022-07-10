@@ -18,19 +18,19 @@
     <div class="center-wrap">
       <button type="button" class="btn" id="add-book-btn">Add new book</button>
     </div>
-    <form action="#" method="post" id="add-book-form">
+    <form action="" method="post" id="add-book-form">
       <div class="form-wrapper">
         <div class="input-wrapper">
           <label for="bookTitle">Book name</label>
-          <input type="text" name="bookTitle" id="bookTitle">
+          <input type="text" name="bookTitle" id="bookTitle" required>
         </div>
         <div class="input-wrapper">
           <label for="bookAuthor">Author</label>
-          <input type="text" name="bookAuthor" id="bookAuthor">
+          <input type="text" name="bookAuthor" id="bookAuthor" required>
         </div>
         <div class="input-wrapper">
           <label for="bookPages">Page nr.</label>
-          <input type="number" name="bookPages" id="bookPages">
+          <input type="number" name="bookPages" id="bookPages" required>
         </div>
         <div class="input-wrapper">
           <label for="bookIsRead">Read?</label>
@@ -49,23 +49,12 @@
         <tr>
           <th>Book name</th>
           <th>Author</th>
-          <th>Page nr.</th>
+          <th>Page count</th>
           <th>Read status</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Lord of the rings</td>
-          <td>J.R.R. Tolkien</td>
-          <td>534</td>
-          <td>read</td>
-        </tr>
-        <tr>
-          <td>Lord of the rings</td>
-          <td>J.R.R. Tolkien</td>
-          <td>534</td>
-          <td>read</td>
-        </tr>
+        
         
       </tbody>
     </table>
