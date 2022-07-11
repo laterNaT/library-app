@@ -86,10 +86,20 @@ button:hover {
 
 .center-wrap {
   text-align: center;
+  margin-top: 50px;
 }
 
 .center-wrap #add-book-btn {
+  display: inline-flex;
+  align-items: center;
   margin-top: 20px;
+  background-color: #ccc;
+}
+
+.center-wrap #add-book-btn svg {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
 }
 
 .form-wrapper {
@@ -123,11 +133,32 @@ button:hover {
   background: rgb(0 0 0 / 54%)
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .btn {
   padding: 10px 20px;
   border-radius: 10px;
   border: 1px solid black;
   font-weight: 500;
+}
+
+.read-btn {
+  border: none;
+  background: none;
+  font-size: 25px;
+  -webkit-text-stroke: 1px black;
+}
+
+.book-read:before {
+  content: '✓';
+  color: green;
+}
+
+.book-not-read:before {
+  content: 'X';
+  color: red;
 }
 
 .delete-btn {
