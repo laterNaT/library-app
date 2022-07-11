@@ -93,7 +93,6 @@ button:hover {
   display: inline-flex;
   align-items: center;
   margin-top: 20px;
-  background-color: #ccc;
 }
 
 .center-wrap #add-book-btn svg {
@@ -116,6 +115,13 @@ button:hover {
   background-color: #ccc;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   visibility: hidden;
+}
+
+.form-wrapper p {
+  font-style: italic;
+  max-width: 30ch;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .input-wrapper {
@@ -142,6 +148,7 @@ button:hover {
   border-radius: 10px;
   border: 1px solid black;
   font-weight: 500;
+  background-color: white;
 }
 
 .read-btn {
